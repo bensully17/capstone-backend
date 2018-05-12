@@ -5,13 +5,13 @@ const queries = require('../db/queries')
 
 
 router.get('/', (req, res) => {
-  queries.getAllWines().then(wines => {
+  queries.getAllUserCellars().then(wines => {
     res.json(wines)
   })
 })
 
 router.post('/', (req, res) => {
-  queries.addWineToDB(req.body)
+  queries.addWineToCellar(req.body)
   .then(newWine => {
     res.status(201).json({newWine})
   })
