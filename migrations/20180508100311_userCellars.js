@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.text('varietal')
     table.specificType('grapes', 'text[]')
     table.text('notes')
+    table.string('imageURL')
   })
 };
 
