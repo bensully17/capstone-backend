@@ -4,7 +4,11 @@ module.exports = {
   getAllUserCellars() {
     return knex('user_cellars')
   },
-  getAllWines() {
+  getOneUserCellar(uid) {
+    return knex('user_cellars')
+    .where('uid', uid)
+  },
+  getAllWines(uid) {
     return knex('wines')
   },
   addWineToCellar(body){

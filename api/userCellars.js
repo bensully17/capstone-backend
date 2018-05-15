@@ -10,6 +10,11 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:uid', (req, res) => {
+  queries.getOneUserCellar(req.params.uid)
+  .then(wines => res.json(wines))
+})
+
 router.post('/', (req, res) => {
   queries.addWineToCellar(req.body)
   .then(newWine => {
